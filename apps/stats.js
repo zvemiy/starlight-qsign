@@ -15,16 +15,12 @@ export class Stats extends plugin {
     });
   }
 
-  async send(e) {
-    await e.reply('正在获取统计信息，请稍候...', true);
-  }
-
   async stats(e) {
     let todayStats = {};
     let totalStats = {};
     const userAgent = 'statlight-qsign';
   
-    await this.send(e);
+    await e.reply('正在获取统计信息，请稍候...', true);
   
     try {
       const configPath = './plugins/starlight-qsign/config/sate.yaml';
