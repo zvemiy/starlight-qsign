@@ -26,8 +26,8 @@ export class index extends plugin {
     concurrentLimit = Config.concurrent_limit || 0;
 
     const urls = [
-        { name: 'GitHub', url: 'https://github.com/wuliya336/starlight-qsign/raw/api/apilist.json' },
-        { name: 'Gitee', url: 'https://gitee.com/wuliya336/starlight-qsign/raw/api/apilist.json' }
+        { name: 'GitHub', url: 'https://github.com/wuliya336/starlight-qsign/raw/api/signlist.json' },
+        { name: 'Gitee', url: 'https://gitee.com/wuliya336/starlight-qsign/raw/api/signlist.json' }
     ];
 
     let rawData;
