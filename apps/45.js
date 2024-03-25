@@ -1,5 +1,5 @@
 import common from '../../../lib/common/common.js';
-import { Config } from '../components/index.js'
+import { Config } from '../components/index.js';
 import axios from 'axios';
 
 export class index extends plugin {

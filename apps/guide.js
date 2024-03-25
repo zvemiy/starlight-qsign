@@ -3,7 +3,7 @@ import common from '../../../lib/common/common.js';
 export class guide extends plugin {
     constructor() {
       super({
-        name: '星点签名插件',
+        name: '星点签名',
         event: 'message',
         priority: -33699,
         rule: [
