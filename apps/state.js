@@ -1,4 +1,5 @@
 import common from '../../../lib/common/common.js';
+import { Config } from '../components/index.js';
 
 export class Stats extends plugin {
   constructor() {
