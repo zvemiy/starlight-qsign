@@ -55,11 +55,16 @@ class Config {
 
    /* 公共签名列表请求限制 */
    get concurrent_limit() {
-    return this.getDefOrConfig('sign').concurrent_limit
+    return this.getDefOrConfig('sign').state
    }
 
    /* 签名统计 */
    get state() {
+    return this.getDefOrConfig('state').state_url
+   }
+
+   /* 签名统计地址 */
+   get state_url() {
     return this.getDefOrConfig('state').concurrent_limit
    }
 

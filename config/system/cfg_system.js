@@ -30,8 +30,16 @@ export const cfgSchema = {
           state: {
             title: '签名统计',
             key: '签名统计',
-            def: true,
+            def: false,
             desc: '是否开启签名统计',
+            fileName: 'state'
+          },
+          state_url: {
+            title: '签名统计地址',
+            key: '签名统计地址',
+            type: 'url',
+            def: 'http://127.0.0.1:3000/api/state.php',
+            desc: '签名统计地址,用于给机器人获取统计信息',
             fileName: 'state'
           },
       }
