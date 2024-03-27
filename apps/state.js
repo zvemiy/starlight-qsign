@@ -16,6 +16,7 @@ export class Stats extends plugin {
   }
 
   async stats(e) {
+    if (!Config.state) return false
     let todayStats = {};
     let totalStats = {};
     const userAgent = 'statlight-qsign';

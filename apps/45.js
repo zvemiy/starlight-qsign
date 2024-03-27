@@ -18,7 +18,7 @@ export class index extends plugin {
   }
 
   async list(e) {
-    if (!Config.signlist) return false
+    if (!Config.state) return false
 
     await e.reply('正在从云端获取公共签名API列表信息,请稍候...', true);
 

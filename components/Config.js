@@ -58,6 +58,11 @@ class Config {
     return this.getDefOrConfig('sign').concurrent_limit
    }
 
+   /* 签名统计 */
+   get state() {
+    return this.getDefOrConfig('state').concurrent_limit
+   }
+
   /** 默认配置和用户配置 */
   getDefOrConfig(name) {
     let def = this.getdefSet(name)
@@ -164,12 +169,12 @@ class Config {
   getCfg() {
     let config = this.getDefOrConfig('config')
     let pushconfig = this.getDefOrConfig('push')
-    let sateconfig = this.getDefOrConfig('sate')
+    let stateconfig = this.getDefOrConfig('state')
     let signconfig = this.getDefOrConfig('sign')
     return {
       ...config,
       ...pushconfig,
-      ...sateconfig,
+      ...stateconfig,
       ...signconfig
     }
   }
@@ -213,15 +218,6 @@ class Config {
     let arr = yaml.get(key).slice();
     arr[item] = value
     yaml.set(key, arr)
-  }
-
-  delServersArr(value, name = 'config', type = 'config') {
-    let path = `${Plugin_Path}/config/${type}/${name}.yaml`
-    let yaml = new YamlReader(path)
-    let key = 'servers'
-    // let index = yaml.jsonData[key].indexOf(value)
-    let index = yaml.jsonData[key].findIndex(item => item.name === value);
-    yaml.delete(`${key}.${index}`)
   }
 
   /**
