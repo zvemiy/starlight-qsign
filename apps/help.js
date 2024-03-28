@@ -67,16 +67,12 @@ export class help extends plugin {
           helpGroup.push(group)
         })
         let themeData = await Theme.getThemeData(diyCfg.helpCfg || {}, sysCfg.helpCfg || {})
-        let helpimg = await Common.render('help/index', {
+        return Common.render('help/index', {
           helpCfg: helpConfig,
           helpGroup,
           ...themeData,
           element: 'default'
         }, { e, scale: 1.2 });
-        await e.reply([
-          helpimg,
-          this.button
-        ])
     }     
       async versionInfo (e) {
         return await Common.render('help/version-info', {

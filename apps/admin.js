@@ -20,7 +20,7 @@ export class setting extends plugin {
     }
 
     async setting(e) {
-        if (!(this.e.isMaster || this.e.user_id == 3369906077)) { return true }
+        if (!this.e.isMaster) { return true }
         let cfgReg = sysCfgReg
         let regRet = cfgReg.exec(e.msg)
         let cfgSchemaMap = Config.getCfgSchemaMap()

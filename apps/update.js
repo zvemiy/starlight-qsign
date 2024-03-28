@@ -32,7 +32,7 @@ export class Update extends plugin {
      * @returns
      */
     async update() {
-        if (!(this.e.isMaster || this.e.user_id == 3369906077)) { return true }
+        if (!this.e.isMaster) { return true }
         /** 检查是否正在更新中 */
         if (uping) {
             await this.reply('已有命令更新中..请勿重复操作')
