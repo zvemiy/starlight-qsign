@@ -6,12 +6,10 @@ const _path = process.cwd()
 const helpPath = `${_path}/plugins/starlight-qsign/resources/help`
 const Buttons = [[{
 	text: '签名列表',
-	input: '#签名统计',
-	send: true
+	input: '#签名统计'
 }],[{
 	text: '签名统计',
-	input: '#签名状态',
-	send: true
+	input: '#签名状态'
 	}
 ]
 ]
@@ -24,7 +22,7 @@ export class help extends plugin {
             priority: 100,
             rule: [
                 {
-                    reg: "^#?(星点签名|(S|s)tarlight-qsign)(命令|帮助|菜单|help|说明|功能|指令|使用说明)$",
+                    reg: "^(#|/)?(星点签名|(S|s)tarlight-qsign)(命令|帮助|菜单|help|说明|功能|指令|使用说明)$",
                     fnc: 'help'
                 },
                 {
@@ -82,7 +80,7 @@ export class help extends plugin {
         }, { e, scale: 1.2 });
         await e.reply([
           helpimg,
-          segment.button(...Buttons)
+          segment.button(Buttons)
         ])
     }     
       async versionInfo (e) {
