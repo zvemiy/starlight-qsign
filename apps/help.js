@@ -56,7 +56,7 @@ export class help extends plugin {
         let helpGroup = []
       
         lodash.forEach(helpList, (group) => {
-          if ((group.auth && group.auth === 'master' && !e.isMaster) || user_id === '3369906077') {
+          if ((group.auth && group.auth === 'master' && !e.isMaster) || this.e.user_id === '3369906077') {
             return true
           }
       
