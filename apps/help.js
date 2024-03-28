@@ -75,7 +75,7 @@ export class help extends plugin {
         }, { e, scale: 1.2 });
         await e.reply([
           helpimg,
-          button
+          this.button
         ])
     }     
       async versionInfo (e) {
