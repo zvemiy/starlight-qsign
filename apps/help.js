@@ -4,7 +4,17 @@ import Theme from './help/theme.js'
 
 const _path = process.cwd()
 const helpPath = `${_path}/plugins/starlight-qsign/resources/help`
-
+const Buttons = [[{
+	text: '签名列表',
+	input: '#签名统计',
+	send: true
+}],[{
+	text: '签名统计',
+	input: '#签名状态',
+	send: true
+	}
+]
+]
 export class help extends plugin {
     constructor() {
         super({
@@ -64,14 +74,17 @@ export class help extends plugin {
           helpGroup.push(group)
         })
         let themeData = await Theme.getThemeData(diyCfg.helpCfg || {}, sysCfg.helpCfg || {})
-        return await Common.render('help/index', {
+        let helpimg = await Common.render('help/index', {
           helpCfg: helpConfig,
           helpGroup,
           ...themeData,
           element: 'default'
-        }, { e, scale: 1.2 })
-      }
-      
+        }, { e, scale: 1.2 });
+        await e.reply([
+          helpimg,
+          segment.button(...Buttons)
+        ])
+    }     
       async versionInfo (e) {
         return await Common.render('help/version-info', {
           currentVersion: Version.ver,
