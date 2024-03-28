@@ -9,7 +9,7 @@ export class Stats extends plugin {
       priority: -33699,
       rule: [
         {
-          reg: '/^(#|/)(星点)?(api|签名||starlight-qsign)(信息|统计)$/i',
+          reg: '/^#?(星点)?(api|签名||starlight-qsign)(信息|统计)$/i',
           fnc: 'stats',
         },
       ],
