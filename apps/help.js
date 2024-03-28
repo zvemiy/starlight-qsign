@@ -26,14 +26,14 @@ export class help extends plugin {
 
     async help (e) {
       const Buttons = ([
-        {
+      {
         text: '签名列表',
         input: '#签名统计'
       },
       {
         text: '签名统计',
         input: '#签名状态'
-        }
+      }
       ]);
 
         let custom = {}
@@ -79,7 +79,7 @@ export class help extends plugin {
           ...themeData,
           element: 'default'
         }, { e, scale: 1.2 });
-        await e.reply([
+        return e.reply([
           helpimg,
           segment.button(Buttons)
         ])
