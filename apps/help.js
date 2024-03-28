@@ -30,7 +30,7 @@ export class help extends plugin {
     }
 
     async help (e) {
-
+      e.msg.replace(/#?(星点签名|starlight-qsign)(命令|帮助|菜单|help|说明|功能|指令|使用说明)/gi, '').trim().toLowerCase();
         let custom = {}
         let help = {}
         let { diyCfg, sysCfg } = await Data.importCfg('help')
@@ -74,7 +74,7 @@ export class help extends plugin {
           ...themeData,
           element: 'default'
         }, { e, scale: 1.2 });
-        return e.reply([
+        await e.reply([
           helpimg,
           this.button
         ])
