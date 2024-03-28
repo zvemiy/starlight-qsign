@@ -25,7 +25,7 @@ export class help extends plugin {
     }
 
     async help (e) {
-      const Buttons = ([
+      const Buttons = segment.button([
       {
         text: '签名列表',
         input: '#签名统计'
@@ -81,7 +81,7 @@ export class help extends plugin {
         }, { e, scale: 1.2 });
         return e.reply([
           helpimg,
-          segment.button(Buttons)
+          Buttons
         ])
     }     
       async versionInfo (e) {
