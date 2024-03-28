@@ -22,19 +22,14 @@ export class help extends plugin {
                 },
             ]
         })
+        this.button = segment.button([
+          { text: "设置", callback: `#星点签名设置` },
+          { text: "签名列表", callback: `45` },
+          { text: "签名统计", callback: `#签名统计` },
+        ])
     }
 
     async help (e) {
-      const Buttons = segment.button([
-      {
-        text: '签名列表',
-        input: '#签名统计'
-      },
-      {
-        text: '签名统计',
-        input: '#签名状态'
-      }
-      ]);
 
         let custom = {}
         let help = {}
@@ -81,7 +76,7 @@ export class help extends plugin {
         }, { e, scale: 1.2 });
         return e.reply([
           helpimg,
-          Buttons
+          this.button
         ])
     }     
       async versionInfo (e) {
