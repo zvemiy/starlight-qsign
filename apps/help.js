@@ -13,11 +13,11 @@ export class help extends plugin {
             priority: 100,
             rule: [
                 {
-                    reg: '/^#?(星点签名|starlight-qsign)(命令|帮助|菜单|help|说明|功能|指令|使用说明)$/i',
+                    reg: '^#?(星点签名|starlight-qsign)(命令|帮助|菜单|help|说明|功能|指令|使用说明)$',
                     fnc: 'help'
                 },
                 {
-                    reg: '/^#?(星点签名|starlight-qsign)(版本|版本信息|version|versioninfo)$/i',
+                    reg: '^#?(星点签名|starlight-qsign)(版本|版本信息|version|versioninfo)$',
                     fnc: 'versionInfo'
                 },
             ]
