@@ -1,7 +1,6 @@
 import lodash from 'lodash'
 import { Common, Data, Version } from '../components/index.js'
 import Theme from './help/theme.js'
-
 const _path = process.cwd()
 const helpPath = `${_path}/plugins/starlight-qsign/resources/help`
 
@@ -14,11 +13,11 @@ export class help extends plugin {
             priority: 100,
             rule: [
                 {
-                    reg: "^(#|/)?(星点签名|(S|s)tarlight-qsign)(命令|帮助|菜单|help|说明|功能|指令|使用说明)$",
+                    reg: '/^(#|/)?(星点签名|starlight-qsign)(命令|帮助|菜单|help|说明|功能|指令|使用说明)$/i',
                     fnc: 'help'
                 },
                 {
-                    reg: "^#?(星点签名|(S|s)tarlight-qsign)(版本|版本信息|version|versioninfo)$",
+                    reg: '/^(#|/)?(星点签名|starlight-qsign)(版本|版本信息|version|versioninfo)$/i',
                     fnc: 'versionInfo'
                 },
             ]
@@ -26,15 +25,16 @@ export class help extends plugin {
     }
 
     async help (e) {
-      const Buttons = ([{
+      const Buttons = ([
+        {
         text: '签名列表',
         input: '#签名统计'
-      }],[{
+      },
+      {
         text: '签名统计',
         input: '#签名状态'
         }
-      ]
-      );
+      ]);
 
         let custom = {}
         let help = {}
