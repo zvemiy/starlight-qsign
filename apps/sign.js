@@ -94,6 +94,9 @@ export class index extends plugin {
       msg.push(providerMsgs);
   }
 
+  const requestTime = new Date().toLocaleString('zh-CN', { hour12: false });
+  msg.push(`数据更新于: ${requestTime}`);
+
   await e.reply(common.makeForwardMsg(e, msg, `点击查看公共签名API列表`));
   return true;
 }
